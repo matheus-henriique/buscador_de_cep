@@ -91,6 +91,24 @@
   font-weight: bold;
 }
 
+footer {
+  margin-bottom: 0;
+  text-align: center;
+  background-color: #212b46;
+}
+
+footer p {
+  color: white;
+  font-size: .8rem;
+  padding: .5rem;
+}
+
+footer p a {
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 @media (min-width: 620px) {
   .title {
     font-size: 4rem;

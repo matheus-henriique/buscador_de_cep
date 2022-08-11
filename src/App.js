@@ -31,33 +31,38 @@ function App() {
   }
 
   return (
-    <div className="container">
-      <h1 className="title">Buscador de CEP</h1>
+    <>
+      <div className="container">
+        <h1 className="title">Buscador de CEP</h1>
 
-      <div className="containerInput">
-        <input 
-          type="text" 
-          placeholder="Digite seu cep..." 
-          value={input}
-          onChange={(e) => setInput(e.target.value) }
-        />
-        <button className="buttonSearch" onClick={handleSearch}>
-          <FiSearch fontSize={25} color="#fff"/>
-      </button>
+        <div className="containerInput">
+          <input 
+            type="text" 
+            placeholder="Digite seu cep..." 
+            value={input}
+            onChange={(e) => setInput(e.target.value) }
+          />
+          <button className="buttonSearch" onClick={handleSearch}>
+            <FiSearch fontSize={25} color="#fff"/>
+        </button>
+        </div>
+
+
+        {Object.keys(cep).length > 0 && (
+          <main className="main">
+            <h2>CEP: {cep.cep}</h2>
+            <p><span>Rua:</span> {cep.logradouro}</p>
+            <p><span>Complemento:</span>  {cep.complemento}</p>
+            <p><span>Bairro:</span> {cep.bairro}</p>
+            <p><span>Localidade:</span> {cep.localidade} - {cep.uf}</p>
+        </main>
+        )}
       </div>
 
-
-      {Object.keys(cep).length > 0 && (
-        <main className="main">
-          <h2>CEP: {cep.cep}</h2>
-          <p><span>Rua:</span> {cep.logradouro}</p>
-          <p><span>Complemento:</span>  {cep.complemento}</p>
-          <p><span>Bairro:</span> {cep.bairro}</p>
-          <p><span>Localidade:</span> {cep.localidade} - {cep.uf}</p>
-      </main>
-      )}
-
-    </div>
+      <footer>
+       <p> Desenlvido por <a href="https://www.instagram.com/" target='_blanck'>Matheus Henrique</a></p>
+      </footer>
+    </>
   );
 }
 
